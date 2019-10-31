@@ -13,25 +13,38 @@
     </script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
     </script>
-    <script type="text/babel">
-    // Our code will go here
-    function App(props) {
-  console.log(props)
-  return (
-    <header>
-      My App
-    </header>
-  );
-}
+    <script
+    src="https://unpkg.com/babel-standalone@6/babel.min.js">
+    </script>
+  
+    
+<script type="text/babel">
+    
 
-// Nested elements inside the App
-ReactDOM.render(
-  <App>
-    <h1>Current Page Title!</h1>
-  </App>,
-  document.querySelector('#application-root')
-);
-  </script>
+    function App(props) {
+    console.log(props)
+    return (
+        <header>
+        {props.children}
+        </header>
+    )}
+
+
+    ReactDOM.render(
+    <App className='my-class'>
+        <div>
+            <h1>Current Page Title!<span>  fart</span>
+            </h1>
+        </div>
+    </App>,
+    document.querySelector('#application-root')
+    )
+
+
+</script>
+
+
 </body>
+
 
 </html>
